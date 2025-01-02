@@ -1,4 +1,4 @@
-Github Workflow - YAML GitHub Workflow (github-workflow.json)
+#Github Workflow - YAML GitHub Workflow (github-workflow.json)
 name: React CI
 
 on:
@@ -28,3 +28,20 @@ on:
             echo "Working Directory: $(pwd)"
             echo "Contents of Working Directory: $(1s -1)"
             echo "Contents of node_modules: $(1s -1 node_modules)"
+    test:
+      runs-on: unbuntu-latest
+
+      steps:
+        - name: check out code
+          uses: actions/checkout@v2
+
+        - name: use Node-js
+          uses: actions/setup-node@v2
+          with:
+            node-version: '20'
+
+        - name: Install dependencies
+          run: npm install
+
+        - name: Run Tests
+          run: npm test

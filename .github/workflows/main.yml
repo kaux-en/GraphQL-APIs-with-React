@@ -3,7 +3,7 @@ name: React CI
 
 on:
   push:
-    branches: [main, master] #every time we do a push to our main or master, we are going to run our jobs
+    branches: [main, master, feature/tests] #every time we do a push to our main or master, we are going to run our jobs
 
 jobs:
   build:

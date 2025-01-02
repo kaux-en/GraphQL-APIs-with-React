@@ -30,24 +30,18 @@ export const GET_CHARACTER = gql`
 
 
 export const GET_CHARACTERS_LOCATIONS = gql`
-requests: {
-            query: GET_CHARACTERS_LOCATIONS,
-            variables: { name: 'test'},
-        },
-        result: {
-            data: {
-                characters: {
-                    results: [
-                        {
-                            id: 1,
-                            location: {
-                                name: 'Test Location',
-                            }
-                        }
-                    ]
-                }
-            }
-        }
+query {
+  characters(page: 2, filter: { name: "rick" }) {
+    info {
+      count
     }
-]
+    results {
+      name
+    }
+  }
+  location(id: 1) {
+    id
+    name
+  }
+}
 `

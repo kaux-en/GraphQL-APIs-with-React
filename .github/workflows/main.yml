@@ -22,7 +22,7 @@ jobs:
         run: npm ci
 
       - name: Print debugging information
-        run: 
+        run: |
           echo "Node Version: $(node -v)"
           echo "NPM Version: $(npm --version)"
           echo "Working Directory: $(pwd)"
